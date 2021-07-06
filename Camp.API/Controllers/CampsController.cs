@@ -25,6 +25,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet("{GenreId}")]
+        
 
         public IActionResult GetCampsByGenre(int GenreId)
         {
@@ -36,6 +37,22 @@ namespace Camp.API.Controllers
             }
             return Ok(camps);
 
+        }
+
+       [HttpGet("City/{City}")]
+        //[Route("api/{City}")]
+      // api/camps/city/izmir şeklinde aranır
+        public IActionResult GetCampsByCity(string City)
+        {
+
+            var result = service.GetAllCamps();
+            var camps = result.FirstOrDefault(c => c.City == City);
+
+            if (camps == null)
+            {
+                return NotFound();
+            }
+            return Ok(camps);
 
         }
     }

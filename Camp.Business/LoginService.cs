@@ -24,7 +24,8 @@ namespace Camp.Business
             dtolist.ForEach(g => result.Add(new LoginListResponse
             {
                 Id = g.Id,
-                Password = g.Password
+                Password = g.Password,
+                UserName=g.UserName
             })) ;
 
             return result;

@@ -30,7 +30,8 @@ namespace Camp.Business
                 Image = g.Image,
                 Name = g.Name,
                 Price = g.Price,
-                GenreId=g.GenreId
+                GenreId=g.GenreId,
+                City=g.City
             }));
             return result;
         }
