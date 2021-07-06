@@ -18,7 +18,7 @@ namespace Movies.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Camp.Models.Camp>().HasOne(c => c.Genre).WithMany(m => m.Camps).HasForeignKey();
+            modelBuilder.Entity<Camp.Models.Camp>().HasOne(c => c.Genre).WithMany(m => m.Camps).HasForeignKey(m=>m.GenreId);
             base.OnModelCreating(modelBuilder);
         }
     }
