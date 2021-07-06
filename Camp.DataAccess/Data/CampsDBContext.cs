@@ -9,7 +9,15 @@ namespace Movies.DataAccess.Data
 {
     public class CampsDBContext : DbContext
     {
-        
+        public CampsDBContext()
+        {
+
+        }
+
+        public CampsDBContext(DbContextOptions<CampsDBContext> options): base(options)
+        {
+
+        }
 
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Login> Logins { get; set; }

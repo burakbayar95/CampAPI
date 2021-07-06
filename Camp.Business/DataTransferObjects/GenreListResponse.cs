@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Movies.Business.DataTransferObjects
 {
-   public class GenreResponseList
+   public class GenreListResponse
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -16,11 +16,11 @@ namespace Movies.Business
 
         }
 
-        public IList<GenreResponseList> GetAllGenres()
+        public IList<GenreListResponse> GetAllGenres()
         {
             var dtoList = genreRepository.GetAll().ToList();
-            List<GenreResponseList> result = new List<GenreResponseList>();
-            dtoList.ForEach(g => result.Add(new GenreResponseList
+            List<GenreListResponse> result = new List<GenreListResponse>();
+            dtoList.ForEach(g => result.Add(new GenreListResponse
             {
                 Id = g.Id,
                 Name = g.Name

@@ -7,7 +7,7 @@ namespace Movies.Business
 {
    public interface IGenreService
     {
-        IList<GenreResponseList> GetAllGenres();
+        IList<GenreListResponse> GetAllGenres();
 
     }
 }
