@@ -1,0 +1,9 @@
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\bin\Debug\netcoreapp3.1\Camp.Models.deps.json
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\bin\Debug\netcoreapp3.1\Camp.Models.dll
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\bin\Debug\netcoreapp3.1\Camp.Models.pdb
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.csproj.AssemblyReference.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.AssemblyInfoInputs.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.AssemblyInfo.cs
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.dll
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.Models\obj\Debug\netcoreapp3.1\Camp.Models.pdb

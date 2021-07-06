@@ -1,0 +1,12 @@
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\bin\Debug\netcoreapp3.1\Camp.DataAccess.deps.json
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\bin\Debug\netcoreapp3.1\Camp.DataAccess.dll
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\bin\Debug\netcoreapp3.1\Camp.DataAccess.pdb
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\bin\Debug\netcoreapp3.1\Camp.Models.dll
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\bin\Debug\netcoreapp3.1\Camp.Models.pdb
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.csproj.AssemblyReference.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.AssemblyInfo.cs
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.csproj.CopyComplete
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.dll
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.DataAccess\obj\Debug\netcoreapp3.1\Camp.DataAccess.pdb

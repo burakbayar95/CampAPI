@@ -13,6 +13,6 @@ namespace Camp.Models
 
         public virtual IList<Camp> Camps { get; set; }
 
-
+        
     }
 }

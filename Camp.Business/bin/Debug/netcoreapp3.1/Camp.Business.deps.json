@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Camp.Business/1.0.0": {
+        "dependencies": {
+          "Camp.DataAccess": "1.0.0",
+          "Camp.Models": "1.0.0"
+        },
+        "runtime": {
+          "Camp.Business.dll": {}
+        }
+      },
+      "Camp.DataAccess/1.0.0": {
+        "dependencies": {
+          "Camp.Models": "1.0.0"
+        },
+        "runtime": {
+          "Camp.DataAccess.dll": {}
+        }
+      },
+      "Camp.Models/1.0.0": {
+        "runtime": {
+          "Camp.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Camp.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Camp.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Camp.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

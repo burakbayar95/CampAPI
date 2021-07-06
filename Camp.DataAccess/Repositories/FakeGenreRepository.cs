@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Camp.DataAccess.Repositories
 {
-    class FakeGenreRepository : IGenreRepository
+   public class FakeGenreRepository : IGenreRepository
     {
         public Genre Add(IEntity entity)
         {
