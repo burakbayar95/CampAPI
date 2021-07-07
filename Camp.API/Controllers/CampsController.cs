@@ -1,4 +1,5 @@
 ﻿using Camp.Business;
+using Camp.Business.DataTransferObjects;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,12 +31,22 @@ namespace Camp.API.Controllers
         public IActionResult GetCampsByGenre(int GenreId)
         {
             var result = service.GetAllCamps();
-            var camps = result.FirstOrDefault(c => c.GenreId == GenreId);
-            if (camps == null)
+            List<CampListResponse> list = new List<CampListResponse>();
+
+            foreach (var item in result)
+            {
+              if(item.GenreId==GenreId)
+                {
+                    list.Add(item);
+                }
+            }   
+            
+            //FirstOrDefault(c => c.GenreId == GenreId);
+            if (list == null || list.Count == 0)
             {
                 return NotFound();
             }
-            return Ok(camps);
+            return Ok(list);
 
         }
 
@@ -46,13 +57,32 @@ namespace Camp.API.Controllers
         {
 
             var result = service.GetAllCamps();
-            var camps = result.FirstOrDefault(c => c.City == City);
+            List<CampListResponse> list = new List<CampListResponse>();
 
-            if (camps == null)
+            foreach (var item in result)
+            {
+                if (item.City == City)
+                {
+                    list.Add(item);
+                }
+            }
+
+            
+            if (list == null || list.Count==0)
             {
                 return NotFound();
             }
-            return Ok(camps);
+            return Ok(list);
+
+
+            //var result = service.GetAllCamps();
+            //var camps = result.FirstOrDefault(c => c.City == City);
+
+            //if (camps == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok(camps);
 
         }
     }

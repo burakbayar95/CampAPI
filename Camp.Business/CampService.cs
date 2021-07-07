@@ -36,6 +36,23 @@ namespace Camp.Business
             return result;
         }
 
+        //public IList<CampListResponse> GetByCity()
+        //{
+        //    var dtolist = campResponsitory.GetAll().ToList();
+        //    List<CampListResponse> result = new List<CampListResponse>();
+        //    dtolist.ForEach(g => result.Add(new CampListResponse
+        //    {
+        //        Description = g.Description,
+        //        Image = g.Image,
+        //        Name = g.Name,
+        //        Price = g.Price,
+        //        GenreId = g.GenreId,
+        //        City = g.City
+        //    }));
+        //    return result;
+        //}
+    }
+
         //public IList<CampListResponse> GetByGenreId(int genreId)
         //{
         //    var dtolist = GetAllCamps().ToList();
@@ -43,5 +60,5 @@ namespace Camp.Business
         //    return (IList<CampListResponse>)dtolist.FirstOrDefault(id => id.GenreId == genreId);
 
         //}
-    }
+    
 }
