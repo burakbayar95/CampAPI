@@ -97,13 +97,14 @@ namespace Camp.API.Controllers
             //}
             //return Ok(camps);
         }
-
+       
         [HttpPost]
         public IActionResult AddCamp(AddNewCampRequest request)
         {
             if (ModelState.IsValid)
             {
-                service.AddCamp(request);
+                int requestid=service.AddCamp(request);
+                return CreatedAtAction(nameof(GetById), routeValues: new { id = requestid }, value: null);//ekledikten sonra bize linkini verir
             }
 
             return BadRequest(ModelState);
