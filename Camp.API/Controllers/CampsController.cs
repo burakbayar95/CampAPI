@@ -1,11 +1,7 @@
 ﻿using Camp.Business;
 using Camp.Business.DataTransferObjects;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Camp.API.Controllers
 {
@@ -14,6 +10,7 @@ namespace Camp.API.Controllers
     public class CampsController : ControllerBase
     {
         private ICampService service;
+
         public CampsController(ICampService service)
         {
             this.service = service;
@@ -25,9 +22,29 @@ namespace Camp.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{GenreId}")]
-        
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var result = service.GetAllCamps();
 
+            List<CampListResponse> list = new List<CampListResponse>();
+
+            foreach (var item in result)
+            {
+                if (item.Id == id)
+                {
+                    list.Add(item);
+                }
+            }
+
+            if (list == null || list.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(list);
+        }
+
+        [HttpGet("genres/{GenreId}")]
         public IActionResult GetCampsByGenre(int GenreId)
         {
             var result = service.GetAllCamps();
@@ -35,27 +52,25 @@ namespace Camp.API.Controllers
 
             foreach (var item in result)
             {
-              if(item.GenreId==GenreId)
+                if (item.GenreId == GenreId)
                 {
                     list.Add(item);
                 }
-            }   
-            
+            }
+
             //FirstOrDefault(c => c.GenreId == GenreId);
             if (list == null || list.Count == 0)
             {
                 return NotFound();
             }
             return Ok(list);
-
         }
 
-       [HttpGet("City/{City}")]
+        [HttpGet("city/{City}")]
         //[Route("api/{City}")]
-      // api/camps/city/izmir şeklinde aranır
+        // api/camps/city/izmir şeklinde aranır
         public IActionResult GetCampsByCity(string City)
         {
-
             var result = service.GetAllCamps();
             List<CampListResponse> list = new List<CampListResponse>();
 
@@ -67,13 +82,11 @@ namespace Camp.API.Controllers
                 }
             }
 
-            
-            if (list == null || list.Count==0)
+            if (list == null || list.Count == 0)
             {
                 return NotFound();
             }
             return Ok(list);
-
 
             //var result = service.GetAllCamps();
             //var camps = result.FirstOrDefault(c => c.City == City);
@@ -83,7 +96,17 @@ namespace Camp.API.Controllers
             //    return NotFound();
             //}
             //return Ok(camps);
+        }
 
+        [HttpPost]
+        public IActionResult AddCamp(AddNewCampRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                service.AddCamp(request);
+            }
+
+            return BadRequest(ModelState);
         }
     }
 }

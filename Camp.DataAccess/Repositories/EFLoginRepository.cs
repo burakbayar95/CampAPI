@@ -21,6 +21,11 @@ namespace Camp.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
+        public Login AddCampss(Models.Camp camp)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Login> GetAll()
         {
             return db.Logins.ToList();

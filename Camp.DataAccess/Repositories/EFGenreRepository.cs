@@ -1,10 +1,10 @@
 ﻿using Camp.Models;
-using Movies.DataAccess.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Movies.DataAccess.Data;
 
 namespace Camp.DataAccess.Repositories
 {
@@ -17,6 +17,11 @@ namespace Camp.DataAccess.Repositories
             db = campsDBContext;
         }
         public Genre Add(IEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Genre AddCampss(Models.Camp camp)
         {
             throw new NotImplementedException();
         }

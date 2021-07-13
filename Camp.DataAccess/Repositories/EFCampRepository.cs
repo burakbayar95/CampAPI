@@ -1,14 +1,14 @@
-﻿using Camp.Models;
+﻿
+using Camp.Models;
 using Movies.DataAccess.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Camp.DataAccess.Repositories
 {
-   public class EFCampRepository : ICampResponsitory
+    public class EFCampRepository  : ICampResponsitory// => niye hata verdiğini çöz
     {
         private CampsDBContext db;
 
@@ -16,9 +16,25 @@ namespace Camp.DataAccess.Repositories
         {
             db = campsDBContext;
         }
+        //public Models.Camp Add(Models.Camp entity)
+        //{
+        //    db.Camps.Add(entity);
+        //    db.SaveChanges();
+        //    return entity; //interface de sorun çıktı. burası düzenlendi 
+        //    // TO DO: Tekrardan bakılacak
+        //}
+
         public Models.Camp Add(IEntity entity)
         {
             throw new NotImplementedException();
+        }
+
+        public Models.Camp AddCampss(Models.Camp entity)
+        {
+            db.Camps.Add(entity);
+            db.SaveChanges();
+            return entity; //interface de sorun çıktı. burası düzenlendi 
+            // TO DO: Tekrardan bakılacak
         }
 
         public IList<Models.Camp> GetAll()

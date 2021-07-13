@@ -1,4 +1,6 @@
-﻿using Camp.Business.DataTransferObjects;
+﻿using AutoMapper;
+using Camp.Business.DataTransferObjects;
+using Camp.Business.Extensions;
 using Camp.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,14 +12,23 @@ namespace Camp.Business
     public class CampService : ICampService
     {
         private ICampResponsitory campResponsitory;
+        private IMapper mapper;
 
         public CampService()
         {
         }
 
-        public CampService(ICampResponsitory campResponsitory)
+        public CampService(ICampResponsitory campResponsitory,IMapper mapper)
         {
             this.campResponsitory = campResponsitory;
+            this.mapper = mapper;
+        }
+
+        public int AddCamp(AddNewCampRequest request)
+        {
+            var newCamp = request.ConvertToCamp(mapper);
+            campResponsitory.AddCampss(newCamp);
+            return newCamp.Id;
         }
 
         public IList<CampListResponse> GetAllCamps()
@@ -26,6 +37,7 @@ namespace Camp.Business
             List<CampListResponse> result = new List<CampListResponse>();
             dtolist.ForEach(g => result.Add(new CampListResponse
             {
+                 Id=g.Id,
                 Description = g.Description,
                 Image = g.Image,
                 Name = g.Name,
@@ -62,3 +74,9 @@ namespace Camp.Business
         //}
     
 }
+
+
+
+
+
+

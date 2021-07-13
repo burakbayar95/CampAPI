@@ -4,7 +4,7 @@ using System.Text;
 using Camp.Models;
 namespace Camp.DataAccess.Repositories
 {
-  public interface ICampResponsitory :IRepository<Models.Camp>
+  public interface ICampResponsitory :IRepository<Camp.Models.Camp>
     {
 
     }

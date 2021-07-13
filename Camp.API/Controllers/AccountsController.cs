@@ -23,6 +23,8 @@ namespace Camp.API.Controllers
         {
             var result = service.GetAllAccounts();
             return Ok(result);
+
+
         }
     }
 }

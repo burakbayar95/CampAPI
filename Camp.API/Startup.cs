@@ -1,20 +1,14 @@
 using Camp.Business;
+using Camp.Business.Extensions;
+using Movies.DataAccess.Data;
 using Camp.DataAccess.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Movies.Business;
-using Movies.DataAccess.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Camp.API
 {
@@ -31,12 +25,13 @@ namespace Camp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMapperConfiguration();
             services.AddScoped<IGenreService, GenreService>();
             services.AddScoped<ICampService, CampService>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IGenreRepository,EFGenreRepository>();
-            services.AddScoped<ICampResponsitory, EFCampRepository>();
-            services.AddScoped<ILoginRepository, EFLoginRepository>();
+            services.AddScoped<ICampResponsitory, EFCampRepository>();//ICampResponsitory,
+            services.AddScoped<ILoginRepository, EFLoginRepository>();//ILoginRepository,
             var connectionString = Configuration.GetConnectionString("db");
             services.AddDbContext<CampsDBContext>(options => options.UseSqlServer(connectionString));
         }

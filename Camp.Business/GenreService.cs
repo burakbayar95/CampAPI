@@ -1,4 +1,5 @@
-﻿using Camp.DataAccess.Repositories;
+﻿using Camp.Business.Extensions;
+using Camp.DataAccess.Repositories;
 using Movies.Business.DataTransferObjects;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,8 @@ namespace Movies.Business
         public IList<GenreListResponse> GetAllGenres()
         {
             var dtoList = genreRepository.GetAll().ToList();
-            List<GenreListResponse> result = new List<GenreListResponse>();
-            dtoList.ForEach(g => result.Add(new GenreListResponse
-            {
-                Id = g.Id,
-                Name = g.Name
-            }));
+
+            var result=dtoList.ConvertToListResponse(); 
 
             return result;
         }

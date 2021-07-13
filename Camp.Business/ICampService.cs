@@ -8,5 +8,9 @@ namespace Camp.Business
     public interface ICampService
     {
         IList<CampListResponse> GetAllCamps();
+
+        //eklenen son varlığın idsi
+        int AddCamp(AddNewCampRequest request);
+       
     }
 }
