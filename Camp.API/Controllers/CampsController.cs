@@ -45,7 +45,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet("genres/{GenreId}")]
-        public IActionResult GetCampsByGenre(int GenreId)
+        public List<CampListResponse> GetCampsByGenre(int GenreId)
         {
             var result = service.GetAllCamps();
             List<CampListResponse> list = new List<CampListResponse>();
@@ -57,14 +57,39 @@ namespace Camp.API.Controllers
                     list.Add(item);
                 }
             }
-
+            if (list == null || list.Count == 0)
+            {
+             //   return NotFound();
+            }
+            return list;
+        }
+        [HttpGet("genre/{GenreId}/{city}")]
+        public IActionResult GetCampsByCityAndGenres(int GenreId,string city)
+        {
+            var result = service.GetAllCamps();
+            List<CampListResponse> list = new List<CampListResponse>();
+           //var result2 = GetCampsByGenre(GenreId);
+            foreach (var item in result)//result2
+            {
+                if (item.GenreId==GenreId && item.City == city)
+                {
+                    list.Add(item);
+                }
+            }
             //FirstOrDefault(c => c.GenreId == GenreId);
             if (list == null || list.Count == 0)
             {
                 return NotFound();
             }
             return Ok(list);
+
+
+           
         }
+            
+
+        //*********************
+
 
         [HttpGet("city/{City}")]
         //[Route("api/{City}")]
@@ -72,6 +97,7 @@ namespace Camp.API.Controllers
         public IActionResult GetCampsByCity(string City)
         {
             var result = service.GetAllCamps();
+            
             List<CampListResponse> list = new List<CampListResponse>();
 
             foreach (var item in result)
