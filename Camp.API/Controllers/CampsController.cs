@@ -1,4 +1,5 @@
-﻿using Camp.Business;
+﻿using Camp.API.Filters;
+using Camp.Business;
 using Camp.Business.DataTransferObjects;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -137,9 +138,10 @@ namespace Camp.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [CampExist]
         public IActionResult UpdateCamp(int id,EditCampRequest request)
         {
-            //var isExisting = GetById(id);
+            //var isExisting = GetById(id);      [CampExist] bu işlemi yapu
             //if (isExisting==null)
             //{
             //    return NotFound();

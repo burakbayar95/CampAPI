@@ -48,6 +48,11 @@ namespace Camp.Business
             return result;
         }
 
+        public IList<CampListResponse> GetAllCamps(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public int UpdateCamp(EditCampRequest request)
         {
             var camp = request.ConverToEntity(mapper);

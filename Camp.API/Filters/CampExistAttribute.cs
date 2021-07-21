@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Camp.Business;
+using Camp.DataAccess.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -13,16 +15,31 @@ namespace Camp.API.Filters
         {
 
         }
-        private class CampExistingFilter : IActionFilter
+        private class CampExistingFilter : IAsyncActionFilter
         {
-            public void OnActionExecuted(ActionExecutedContext context)
+            private ICampService campService;
+            
+           
+            public CampExistingFilter(ICampService campService)
             {
-                throw new NotImplementedException();
+                this.campService = campService;
             }
-
-            public void OnActionExecuting(ActionExecutingContext context)
+            public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
             {
-                throw new NotImplementedException();
+
+                if (!context.ActionArguments.ContainsKey("id")) 
+                {
+                    context.Result = new BadRequestResult();
+                    return;
+                }
+                if (!(context.ActionArguments["id"] is int id))
+                {
+                    context.Result = new BadRequestResult();
+                    return;
+                }
+                
+               
+                await next();
             }
         }
     }
