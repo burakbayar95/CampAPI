@@ -11,6 +11,6 @@ namespace Camp.Business
 
         //eklenen son varlığın idsi
         int AddCamp(AddNewCampRequest request);
-       
+        int UpdateCamp(EditCampRequest request);
     }
 }

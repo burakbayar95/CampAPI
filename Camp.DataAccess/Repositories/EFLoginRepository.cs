@@ -40,5 +40,10 @@ namespace Camp.DataAccess.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Login Update(Models.Camp camp)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

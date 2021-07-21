@@ -40,5 +40,10 @@ namespace Camp.DataAccess.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Genre Update(Models.Camp camp)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

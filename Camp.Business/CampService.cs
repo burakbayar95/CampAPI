@@ -48,6 +48,13 @@ namespace Camp.Business
             return result;
         }
 
+        public int UpdateCamp(EditCampRequest request)
+        {
+            var camp = request.ConverToEntity(mapper);
+            int id = campResponsitory.Update(camp).Id;
+            return id;
+        }
+
         //public IList<CampListResponse> GetByCity()
         //{
         //    var dtolist = campResponsitory.GetAll().ToList();

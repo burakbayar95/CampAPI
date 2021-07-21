@@ -1,5 +1,6 @@
 ﻿
 using Camp.Models;
+using Microsoft.EntityFrameworkCore;
 using Movies.DataAccess.Data;
 using System;
 using System.Collections.Generic;
@@ -44,12 +45,19 @@ namespace Camp.DataAccess.Repositories
 
         public Models.Camp GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Camps.AsNoTracking().FirstOrDefault(x => x.Id == id); //?
         }
 
         public IList<Models.Camp> GetWithCriteria(Expression<Func<Models.Camp, bool>> criteria)
         {
             throw new NotImplementedException();
+        }
+
+        public Models.Camp Update(Models.Camp camp)
+        {
+            db.Entry(camp).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+            return camp;
         }
     }
 }

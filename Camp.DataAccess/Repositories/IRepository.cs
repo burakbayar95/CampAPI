@@ -13,5 +13,6 @@ namespace Camp.DataAccess.Repositories
         TEntity Add(IEntity entity);
 
         TEntity AddCampss(Camp.Models.Camp camp);
+        TEntity Update(Camp.Models.Camp camp);
     }
 }

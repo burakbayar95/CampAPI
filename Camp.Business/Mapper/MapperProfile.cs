@@ -12,6 +12,7 @@ namespace Camp.Business.Mapper
         {
             CreateMap<Camp.Models.Camp, CampListResponse>().ReverseMap();
             CreateMap<Camp.Models.Camp, AddNewCampRequest>().ReverseMap();
+            CreateMap<Camp.Models.Camp, EditCampRequest>().ReverseMap();
         }
     }
 }

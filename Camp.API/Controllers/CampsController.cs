@@ -135,5 +135,38 @@ namespace Camp.API.Controllers
 
             return BadRequest(ModelState);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateCamp(int id,EditCampRequest request)
+        {
+            //var isExisting = GetById(id);
+            //if (isExisting==null)
+            //{
+            //    return NotFound();
+            //} asnotracking eklememiz gerek 
+            if (ModelState.IsValid)
+            {
+              int newItemId = service.UpdateCamp(request);
+                return Ok(newItemId);
+
+            }
+            return BadRequest(ModelState);
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+
+
+            //var isExisting = GetById(id);
+            //if (isExisting == null)
+            //{
+            //    return NotFound();
+            //}
+            return Ok();
+        }
+
     }
 }
+

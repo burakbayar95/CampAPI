@@ -33,5 +33,9 @@ namespace Camp.Business.Extensions
         {
             return mapper.Map<Camp.Models.Camp>(request);
         }
+        public static Camp.Models.Camp ConverToEntity (this EditCampRequest request, IMapper mapper)
+        {
+            return mapper.Map<Camp.Models.Camp>(request);
+        }
     }
 }
