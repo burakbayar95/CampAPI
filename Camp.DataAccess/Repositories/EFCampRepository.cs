@@ -38,6 +38,12 @@ namespace Camp.DataAccess.Repositories
             // TO DO: Tekrardan bakılacak
         }
 
+        public void Delete(int id)
+        {
+            db.Camps.Remove(GetById(id));
+            db.SaveChanges();
+        }
+
         public IList<Models.Camp> GetAll()
         {
             return db.Camps.ToList();

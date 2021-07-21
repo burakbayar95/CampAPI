@@ -37,8 +37,8 @@ namespace Camp.API.Filters
                     context.Result = new BadRequestResult();
                     return;
                 }
-                
-               
+
+              
                 await next();
             }
         }

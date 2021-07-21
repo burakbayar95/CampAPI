@@ -31,6 +31,11 @@ namespace Camp.Business
             return newCamp.Id;
         }
 
+        public void DeleteCamp(int id)
+        {
+            campResponsitory.Delete(id);
+        }
+
         public IList<CampListResponse> GetAllCamps()
         {
             var dtolist = campResponsitory.GetAll().ToList();
@@ -53,12 +58,19 @@ namespace Camp.Business
             throw new NotImplementedException();
         }
 
+        public int GetByIdCamps(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public int UpdateCamp(EditCampRequest request)
         {
             var camp = request.ConverToEntity(mapper);
             int id = campResponsitory.Update(camp).Id;
             return id;
         }
+
+       
 
         //public IList<CampListResponse> GetByCity()
         //{

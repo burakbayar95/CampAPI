@@ -26,6 +26,11 @@ namespace Camp.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Login> GetAll()
         {
             return db.Logins.ToList();

@@ -159,13 +159,9 @@ namespace Camp.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            service.DeleteCamp(id);
 
-
-            //var isExisting = GetById(id);
-            //if (isExisting == null)
-            //{
-            //    return NotFound();
-            //}
+            
             return Ok();
         }
 

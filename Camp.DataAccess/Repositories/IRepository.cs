@@ -14,5 +14,6 @@ namespace Camp.DataAccess.Repositories
 
         TEntity AddCampss(Camp.Models.Camp camp);
         TEntity Update(Camp.Models.Camp camp);
+        void Delete(int id);
     }
 }
