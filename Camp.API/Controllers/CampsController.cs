@@ -17,6 +17,7 @@ namespace Camp.API.Controllers
             this.service = service;
         }
 
+        [HttpGet]
         public IActionResult Get()
         {
             var result = service.GetAllCamps();

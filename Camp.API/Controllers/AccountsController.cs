@@ -19,6 +19,7 @@ namespace Camp.API.Controllers
 
         }
 
+        [HttpGet]
         public IActionResult Get()
         {
             var result = service.GetAllAccounts();
