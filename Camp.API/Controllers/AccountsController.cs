@@ -27,7 +27,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet] //get
-        [Authorize]
+        [Authorize(Roles ="admin")]
         public IActionResult Get()
         {
             var result = service.GetAllAccounts();
@@ -51,7 +51,8 @@ namespace Camp.API.Controllers
             var credantial = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub,user.UserName)
+                new Claim(JwtRegisteredClaimNames.Sub,user.UserName),
+                new Claim(ClaimTypes.Role,user.Role)
 
             };
             var token = new JwtSecurityToken(

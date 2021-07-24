@@ -134,6 +134,7 @@ namespace Camp.API.Controllers
         }
        
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddCamp(AddNewCampRequest request)
         {
             if (ModelState.IsValid)
@@ -147,6 +148,7 @@ namespace Camp.API.Controllers
 
         [HttpPut("{id}")]
         [CampExist]
+        [Authorize(Roles = "Admin")]
         public IActionResult UpdateCamp(int id,EditCampRequest request)
         {
             //var isExisting = GetById(id);      [CampExist] bu işlemi yapu
@@ -165,6 +167,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             service.DeleteCamp(id);
