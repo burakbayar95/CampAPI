@@ -1,5 +1,6 @@
 ﻿using Camp.Business.DataTransferObjects;
 using Camp.DataAccess.Repositories;
+using Camp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,17 @@ namespace Camp.Business
             {
                 Id = g.Id,
                 Password = g.Password,
-                UserName=g.UserName
+                UserName=g.UserName,
+                 Role=g.Role
+                
             })) ;
 
             return result;
+        }
+
+        public Login GetUser(string userName,string password)
+        {
+            return loginRepository.GetWithCriteria(x => x.UserName == userName && x.Password == password).FirstOrDefault();
         }
     }
 }

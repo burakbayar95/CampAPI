@@ -1,4 +1,5 @@
 ﻿using Camp.Business.DataTransferObjects;
+using Camp.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,5 +10,6 @@ namespace Camp.Business
 
     {
         IList<LoginListResponse> GetAllAccounts();
+       Login GetUser(string userName,string password);
     }
 }

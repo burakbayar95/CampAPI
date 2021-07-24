@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Camp.Models
+namespace Camp.API.Models
 {
-    public class Login  :IEntity
+    public class UserLoginModel
     {
-        public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
-
-
-
     }
 }

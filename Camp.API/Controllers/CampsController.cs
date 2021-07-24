@@ -1,6 +1,7 @@
 ﻿using Camp.API.Filters;
 using Camp.Business;
 using Camp.Business.DataTransferObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -8,6 +9,7 @@ namespace Camp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CampsController : ControllerBase
     {
         private ICampService service;
@@ -18,6 +20,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Get()
         {
             var result = service.GetAllCamps();
@@ -25,6 +28,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult GetById(int id)
         {
             var result = service.GetAllCamps();
@@ -47,6 +51,7 @@ namespace Camp.API.Controllers
         }
 
         [HttpGet("genres/{GenreId}")]
+        [AllowAnonymous]
         public List<CampListResponse> GetCampsByGenre(int GenreId)
         {
             var result = service.GetAllCamps();
@@ -66,6 +71,7 @@ namespace Camp.API.Controllers
             return list;
         }
         [HttpGet("genre/{GenreId}/{city}")]
+        [AllowAnonymous]
         public IActionResult GetCampsByCityAndGenres(int GenreId,string city)
         {
             var result = service.GetAllCamps();
@@ -94,6 +100,7 @@ namespace Camp.API.Controllers
 
 
         [HttpGet("city/{City}")]
+        [AllowAnonymous]
         //[Route("api/{City}")]
         // api/camps/city/izmir şeklinde aranır
         public IActionResult GetCampsByCity(string City)

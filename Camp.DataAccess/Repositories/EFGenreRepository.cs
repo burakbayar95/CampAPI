@@ -43,6 +43,11 @@ namespace Camp.DataAccess.Repositories
 
         public IList<Genre> GetWithCriteria(Expression<Func<Genre, bool>> criteria)
         {
+            return db.Genres.Where(criteria).ToList();
+        }
+
+        public IList<Genre> GetWithCriteria(Func<Genre, bool> criteria)
+        {
             throw new NotImplementedException();
         }
 

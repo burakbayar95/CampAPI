@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qde9AQ7im0DVYT03vardMVDrvw//KxRUe5k7V/wURy0pEwoS21GE66SYhW1/y4F1ZxcnsdabptIQOpOc+DCkLg==",
+  "dgSpecHash": "w+nKDCzr73DxN8eYw5jg5YwElIYUowYGOP8+edP+yi3pzSe7D+J28JMohoZBlNO1UWCc7kMaUblqHwzBmUAYIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\burak\\Desktop\\CampAPI\\Camp\\Camp.API\\Camp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\burak\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\burak\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

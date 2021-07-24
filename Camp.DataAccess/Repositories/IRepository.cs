@@ -9,7 +9,7 @@ namespace Camp.DataAccess.Repositories
     {
         IList<TEntity> GetAll();
         TEntity GetById(int id);
-        IList<TEntity> GetWithCriteria(Expression<Func<TEntity, bool>> criteria);
+        IList<TEntity> GetWithCriteria(Func<TEntity, bool> criteria);
         TEntity Add(IEntity entity);
 
         TEntity AddCampss(Camp.Models.Camp camp);

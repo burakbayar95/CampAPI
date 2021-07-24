@@ -56,6 +56,11 @@ namespace Camp.DataAccess.Repositories
 
         public IList<Models.Camp> GetWithCriteria(Expression<Func<Models.Camp, bool>> criteria)
         {
+            return db.Camps.Where(criteria).ToList();
+        }
+
+        public IList<Models.Camp> GetWithCriteria(Func<Models.Camp, bool> criteria)
+        {
             throw new NotImplementedException();
         }
 

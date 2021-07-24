@@ -41,9 +41,9 @@ namespace Camp.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public IList<Login> GetWithCriteria(Expression<Func<Login, bool>> criteria)
+        public IList<Login> GetWithCriteria(Func<Login, bool> criteria)
         {
-            throw new NotImplementedException();
+            return GetAll().Where(criteria).ToList(); //
         }
 
         public Login Update(Models.Camp camp)

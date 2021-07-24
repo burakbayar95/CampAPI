@@ -72,3 +72,4 @@ C:\Users\burak\Desktop\CampAPI\Camp\Camp.API\bin\Debug\netcoreapp3.1\Swashbuckle
 C:\Users\burak\Desktop\CampAPI\Camp\Camp.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\burak\Desktop\CampAPI\Camp\Camp.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\burak\Desktop\CampAPI\Camp\Camp.API\obj\Debug\netcoreapp3.1\Camp.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\burak\Desktop\CampAPI\Camp\Camp.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
