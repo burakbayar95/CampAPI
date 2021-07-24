@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace Camp.API.Controllers
 {
@@ -20,9 +21,12 @@ namespace Camp.API.Controllers
     public class AccountsController : ControllerBase
     {
         private ILoginService service;
-        public AccountsController(ILoginService service)
+        private IConfiguration configuration;
+
+        public AccountsController(ILoginService service, IConfiguration configuration)
         {
             this.service = service;
+            this.configuration = configuration;
 
         }
 
@@ -46,7 +50,9 @@ namespace Camp.API.Controllers
             }
             string issiuer = "dxdiag";
             string audience = "dxdiag";
-            var key = "ghostmojoghostmojoghostmojo";
+            var key=configuration.GetSection("Bearer")["SecurityKey"]; // startup üzerinden okuduk
+
+            // var key = "ghostmojoghostmojoghostmojo";
             var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credantial = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
