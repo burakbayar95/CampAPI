@@ -16,7 +16,9 @@ namespace Camp.API.Controllers
 
         public CampsController(ICampService service)
         {
+
             this.service = service;
+
         }
 
         [HttpGet]
