@@ -13,5 +13,7 @@ namespace Camp.Business.DataTransferObjects
         public string Image { get; set; }
         public int GenreId { get; set; }
         public string City { get; set; }
+        public string CampMap { get; set; }
+
     }
 }

@@ -48,7 +48,9 @@ namespace Camp.Business
                 Name = g.Name,
                 Price = g.Price,
                 GenreId=g.GenreId,
-                City=g.City
+                City=g.City,
+                 CampMap=g.CampMap
+                
             }));
             return result;
         }

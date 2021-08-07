@@ -23,5 +23,7 @@ namespace Camp.Business.DataTransferObjects
         [Required(ErrorMessage = "Şehir belirtmediniz")]
         public string City { get; set; }
 
+        
+
     }
 }

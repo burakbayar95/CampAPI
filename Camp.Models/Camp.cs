@@ -16,6 +16,8 @@ namespace Camp.Models
         public int GenreId { get; set; }
         public string City { get; set; }
 
+        public string CampMap { get; set; }
+
 
 
         //Navigation Property
